@@ -21,9 +21,9 @@
       "auto_release": "y",
       "copyright_holder": "VSHN AG <info@vshn.ch>",
       "copyright_year": "2026",
-      "github_owner": "vshn",
+      "github_owner": "projectsyn",
       "github_name": "component-capi-provider-talos",
-      "github_url": "https://github.com/vshn/component-capi-provider-talos",
+      "github_url": "https://github.com/projectsyn/component-capi-provider-talos",
       "_template": "https://github.com/projectsyn/commodore-component-template.git",
       "_commit": "aec8da7344f670fff4f96fb20cbdcfbdeb2113d4"
     }
