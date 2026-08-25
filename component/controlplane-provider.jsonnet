@@ -1,4 +1,3 @@
-// main template for capi-provider-cloudscale
 local com = import 'lib/commodore.libjsonnet';
 local kap = import 'lib/kapitan.libjsonnet';
 local kube = import 'lib/kube.libjsonnet';

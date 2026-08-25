@@ -2,7 +2,6 @@ parameters:
   capi_provider_talos:
     =_metadata:
       multi_tenant: true
-    # The component assumes that this namespace already exists via dependency `component-capi-core`
     namespace: syn-cluster-api
 
     images:
@@ -16,17 +15,7 @@ parameters:
         tag: v0.5.13
 
     bootstrap:
-
-      # An object with variables that the generated manifests will be templated with.
-      # They should be specified in the format:
-      # variables:
-      #   my_variable: bar
       variables: {}
 
     controlplane:
-
-      # An object with variables that the generated manifests will be templated with.
-      # They should be specified in the format:
-      # variables:
-      #   my_variable: bar
       variables: {}

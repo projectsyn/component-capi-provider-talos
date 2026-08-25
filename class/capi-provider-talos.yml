@@ -24,9 +24,9 @@ parameters:
       - input_type: external
         output_path: .
         input_paths:
-          - ${_base_directory}/scripts/envsubst-dir
+          - ${_base_directory}/envsubst-dir
         # map env vars from parameters as needed
-        env_vars: {}
+        env_vars: ${capi_provider_talos:bootstrap:variables}
         args:
           - ${_base_directory}/manifests/capi-bootstrap-provider-talos-rendered
           - \${compiled_target_dir}/capi-provider-talos/bootstrap/10_kustomize
@@ -45,10 +45,9 @@ parameters:
       - input_type: external
         output_path: .
         input_paths:
-          - ${_base_directory}/scripts/envsubst-dir
+          - ${_base_directory}/envsubst-dir
         # map env vars from parameters as needed
-        env_vars:
-          ENVSUBST_VERSION: v1.4.3
+        env_vars: ${capi_provider_talos:controlplane:variables}
         args:
           - ${_base_directory}/manifests/capi-controlplane-provider-talos-rendered
           - \${compiled_target_dir}/capi-provider-talos/controlplane/10_kustomize

@@ -5,7 +5,7 @@ local inv = kap.inventory();
 // The hiera parameters for the component
 local params = inv.parameters.capi_provider_talos;
 
-assert std.member(inv.applications, 'capi-core') : 'Application capi-core is not available';
+assert std.member(inv.applications, 'capi-core') : 'Component capi-provider-talos requires component capi-core';
 
 // Define outputs below
 {
