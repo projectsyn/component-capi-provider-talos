@@ -3,4 +3,4 @@
 This code repository is part of Project Syn and the contribution guide at
 https://syn.tools/syn/about/contribution_guide.html does apply.
 
-Submit Pull Requests at https://github.com/vshn/component-capi-provider-talos/pulls.
+Submit Pull Requests at https://github.com/projectsyn/component-capi-provider-talos/pulls.

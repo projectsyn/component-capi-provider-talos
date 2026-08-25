@@ -2,4 +2,20 @@ parameters:
   capi_provider_talos:
     =_metadata:
       multi_tenant: true
-    namespace: syn-capi-provider-talos
+    namespace: syn-cluster-api
+
+    images:
+      capi-bootstrap-provider-talos:
+        registry: ghcr.io
+        image: siderolabs/cluster-api-bootstrap-talos-controller
+        tag: v0.6.12
+      capi-controlplane-provider-talos:
+        registry: ghcr.io
+        image: siderolabs/cluster-api-control-plane-talos-controller
+        tag: v0.5.13
+
+    bootstrap:
+      variables: {}
+
+    controlplane:
+      variables: {}

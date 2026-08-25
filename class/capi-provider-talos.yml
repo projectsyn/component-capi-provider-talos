@@ -8,4 +8,46 @@ parameters:
       - input_paths:
           - ${_base_directory}/component/main.jsonnet
         input_type: jsonnet
-        output_path: capi-provider-talos/
+        output_path: .
+      - input_paths:
+          - ${_base_directory}/component/bootstrap-provider.jsonnet
+        input_type: jsonnet
+        output_path: ${_base_directory}/manifests/capi-bootstrap-provider-talos/
+      - input_type: external
+        output_path: .
+        input_paths:
+          - ${_kustomize_wrapper}
+        env_vars:
+          INPUT_DIR: ${_base_directory}/manifests/capi-bootstrap-provider-talos/
+        args:
+          - ${_base_directory}/manifests/capi-bootstrap-provider-talos-rendered/
+      - input_type: external
+        output_path: .
+        input_paths:
+          - ${_base_directory}/envsubst-dir
+        # map env vars from parameters as needed
+        env_vars: ${capi_provider_talos:bootstrap:variables}
+        args:
+          - ${_base_directory}/manifests/capi-bootstrap-provider-talos-rendered
+          - \${compiled_target_dir}/capi-provider-talos/bootstrap/10_kustomize
+      - input_paths:
+          - ${_base_directory}/component/controlplane-provider.jsonnet
+        input_type: jsonnet
+        output_path: ${_base_directory}/manifests/capi-controlplane-provider-talos/
+      - input_type: external
+        output_path: .
+        input_paths:
+          - ${_kustomize_wrapper}
+        env_vars:
+          INPUT_DIR: ${_base_directory}/manifests/capi-controlplane-provider-talos/
+        args:
+          - ${_base_directory}/manifests/capi-controlplane-provider-talos-rendered/
+      - input_type: external
+        output_path: .
+        input_paths:
+          - ${_base_directory}/envsubst-dir
+        # map env vars from parameters as needed
+        env_vars: ${capi_provider_talos:controlplane:variables}
+        args:
+          - ${_base_directory}/manifests/capi-controlplane-provider-talos-rendered
+          - \${compiled_target_dir}/capi-provider-talos/controlplane/10_kustomize

@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: commodore
+    cluster.x-k8s.io/provider: control-plane-talos
+  name: cacppt-serving-cert
+  namespace: syn-cluster-api
+spec:
+  dnsNames:
+  - cacppt-webhook-service.syn-cluster-api.svc
+  - cacppt-webhook-service.syn-cluster-api.svc.cluster.local
+  issuerRef:
+    kind: Issuer
+    name: cacppt-selfsigned-issuer
+  secretName: cacppt-webhook-service-cert
