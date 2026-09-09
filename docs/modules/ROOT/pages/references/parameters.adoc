@@ -23,6 +23,18 @@ Entries in this dict should be dictionaries with keys `registry`, `image`, and `
 
 The values of `capi-bootstrap-provider-talos.tag` and  `capi-controlplane-provider-talos.tag` in this dict is used by the component to select the versions of the upstream CAPI provider talos components.
 
+== `kustomization_urls`
+
+[horizontal]
+type:: dict
+default:: See `class/defaults.yml`
+
+This parameter allows providing non-standard URLs for each provider's base Kustomization.
+
+The component will look for fields that match the fields in parameter `images` and expects values to be valid Git repository URLs.
+
+NOTE: Currently, the component looks for the Kustomization in a hard-coded path in the provided repository.
+
 == `bootstrap.variables`
 
 [horizontal]
