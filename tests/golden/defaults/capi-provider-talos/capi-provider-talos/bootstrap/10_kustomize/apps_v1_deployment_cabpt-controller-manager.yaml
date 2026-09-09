@@ -27,7 +27,7 @@ spec:
         - --insecure-diagnostics=false
         command:
         - /manager
-        image: ghcr.io/siderolabs/cluster-api-talos-controller:latest
+        image: ghcr.io/siderolabs/cluster-api-talos-controller:v0.6.12
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
