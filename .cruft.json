@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/projectsyn/commodore-component-template.git",
-  "commit": "aec8da7344f670fff4f96fb20cbdcfbdeb2113d4",
+  "commit": "37002ce82651841be39ce0089de09962e0cef932",
   "checkout": "main",
   "context": {
     "cookiecutter": {
@@ -8,7 +8,7 @@
       "slug": "capi-provider-talos",
       "parameter_key": "capi_provider_talos",
       "test_cases": "defaults",
-      "add_lib": "n",
+      "add_lib": "y",
       "add_pp": "n",
       "add_golden": "y",
       "add_matrix": "y",
@@ -25,7 +25,7 @@
       "github_name": "component-capi-provider-talos",
       "github_url": "https://github.com/projectsyn/component-capi-provider-talos",
       "_template": "https://github.com/projectsyn/commodore-component-template.git",
-      "_commit": "aec8da7344f670fff4f96fb20cbdcfbdeb2113d4"
+      "_commit": "37002ce82651841be39ce0089de09962e0cef932"
     }
   },
   "directory": null
