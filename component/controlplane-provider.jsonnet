@@ -3,6 +3,8 @@ local kap = import 'lib/kapitan.libjsonnet';
 local kube = import 'lib/kube.libjsonnet';
 local utils = import 'utils.libsonnet';
 
+local capi = import 'lib/capi-core.libsonnet';
+
 local inv = kap.inventory();
 // The hiera parameters for the component
 local params = inv.parameters.capi_provider_talos;
@@ -30,6 +32,7 @@ com.Kustomization(
       },
     ],
     patchesStrategicMerge: [ 'rm-namespace.yaml' ],
+    patches: [ capi.kustomize_patch_crd_clusterctl_label.patch ],
   },
 ) {
   'rm-namespace': [
@@ -42,4 +45,4 @@ com.Kustomization(
       },
     },
   ],
-}
+} + capi.kustomize_patch_crd_clusterctl_label.patch_file
