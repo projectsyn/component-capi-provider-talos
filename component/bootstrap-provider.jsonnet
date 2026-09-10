@@ -11,7 +11,7 @@ com.Kustomization(
   'https://github.com/siderolabs/cluster-api-bootstrap-provider-talos/' + manifest_path,
   params.images['capi-bootstrap-provider-talos'].tag,
   {
-    'ghcr.io/siderolabs/cluster-api-bootstrap-talos-controller': {
+    'ghcr.io/siderolabs/cluster-api-talos-controller': {
       local image = params.images['capi-bootstrap-provider-talos'],
       newTag: image.tag,
       newName: '%(registry)s/%(image)s' % image,
