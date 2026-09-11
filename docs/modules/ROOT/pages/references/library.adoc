@@ -1,0 +1,60 @@
+= Component Library
+
+The component includes a Jsonnet library which provides helpers for creating Talos CAPI custom resources.
+
+This page provides details for each field and function provided by the library.
+
+[NOTE]
+====
+The library doesn't provide a helper for the `TalosConfig` custom resource.
+This resource is created by the bootstrap controller and usually doesn't need to be created directly.
+====
+
+== `controlPlaneApiGroup`
+
+This field stores the Kubernetes `apiGroup` for the control plane custom resources.
+
+Users can use this field instead of hard-coding the API group when they need to reference a Talos control plane CAPI custom resource via `apiGroup`, `kind` and `name`.
+
+== `controlPlaneApiVersion`
+
+This field stores the Kubernetes API version for the control plane custom resources.
+
+The component library dynamically sets this field based on the image tag of the `capi-controlplane-provider-talos` container image.
+
+For control plane provider versions v0.5.x and lower, the library sets the field to `v1alpha3`.
+
+For control plane provider versions v0.6.0 and higher, the library sets the field to `v1beta1`.
+
+[WARNING]
+====
+This detection logic isn't very robust and currently covers a somewhat narrow set of options.
+
+If you know the exact API version that you need, we recommend overriding this field when you import the library.
+====
+
+== `bootstrapApiGroup`
+
+This field stores the Kubernetes `apiGroup` for the bootstrap custom resources.
+
+Users can use this field instead of hard-coding the API group when they need to reference a Talos bootstrap CAPI custom resource via `apiGroup`, `kind` and `name`.
+
+== `bootstrapApiVersion`
+
+This field stores the Kubernetes API version for the bootstrap custom resources.
+
+== `TalosControlPlane(name)`
+
+This function creates a minimal `TalosControlPlane` custom resource.
+
+The function only populates fields `apiVersion`, `kind` and `metadata.name`.
+Field `apiVersion` is constructed from library fields `controlPlaneApiGroup` and `controlPlaneApiVersion`.
+Field `metadata.name` is set to the value of argument `name`.
+
+== `TalosConfigTemplate(name)`
+
+This function creates a minimal `TalosConfigTemplate` custom resource.
+
+The function only populates fields `apiVersion`, `kind` and `metadata.name`.
+Field `apiVersion` is constructed from library fields `bootstrapApiGroup` and `bootstrapApiVersion`.
+Field `metadata.name` is set to the value of argument `name`.
