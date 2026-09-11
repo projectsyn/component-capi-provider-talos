@@ -32,7 +32,6 @@ com.Kustomization(
       },
     ],
     patchesStrategicMerge: [ 'rm-namespace.yaml' ],
-    patches: [ capi.kustomize_patch_crd_clusterctl_label.patch ],
   },
 ) {
   'rm-namespace': [
@@ -45,4 +44,4 @@ com.Kustomization(
       },
     },
   ],
-} + capi.kustomize_patch_crd_clusterctl_label.patch_file
+} + capi.kustomize_crd_clusterctl_label_patch
