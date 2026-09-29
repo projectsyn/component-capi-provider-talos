@@ -14,7 +14,7 @@ local sa = kube.ServiceAccount('cluster-ca-dynamic-fact-manager') {
   },
 };
 
-local syn_role = kube.Role('cluster:ca-dynamic-fact-manager') {
+local syn_role = kube.Role('capi-provider-talos:ca-dynamic-fact-manager') {
   metadata+: {
     namespace: syn_namespace,
   },
@@ -27,13 +27,13 @@ local syn_role = kube.Role('cluster:ca-dynamic-fact-manager') {
     {
       apiGroups: [ '' ],
       resources: [ 'configmaps' ],
-      resourceNames: [ 'capi-ca-fact' ],
+      resourceNames: [ 'capi-talos-ca-fact' ],
       verbs: [ 'create', 'update', 'patch' ],
     },
   ],
 };
 
-local role = kube.Role('cluster:ca-dynamic-fact-manager') {
+local role = kube.Role('capi-provider-talos:ca-dynamic-fact-manager') {
   metadata+: {
     namespace: params.namespace,
   },
@@ -48,7 +48,7 @@ local role = kube.Role('cluster:ca-dynamic-fact-manager') {
 };
 
 local syn_rolebinding =
-  kube.RoleBinding('cluster:ca-dynamic-fact-manager') {
+  kube.RoleBinding('capi-provider-talos:ca-dynamic-fact-manager') {
     metadata+: {
       namespace: syn_namespace,
     },
@@ -57,7 +57,7 @@ local syn_rolebinding =
   };
 
 local rolebinding =
-  kube.RoleBinding('cluster:ca-dynamic-fact-manager') {
+  kube.RoleBinding('capi-provider-talos:ca-dynamic-fact-manager') {
     metadata+: {
       namespace: params.namespace,
     },
@@ -95,7 +95,7 @@ local mr = esp.managedResource('cluster-ca-dynamic-fact', params.namespace) {
           apiVersion: 'v1',
           kind: 'ConfigMap',
           namespace: syn_namespace,
-          name: 'capi-ca-fact',
+          name: 'capi-talos-ca-fact',
         },
       },
     ],

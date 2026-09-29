@@ -7,7 +7,7 @@ local src =
   apiVersion: 'v1',
   kind: 'ConfigMap',
   metadata: {
-    name: 'capi-ca-fact',
+    name: 'capi-talos-ca-fact',
     namespace: 'syn',
     labels: {
       'app.kubernetes.io/managed-by': 'espejote',
