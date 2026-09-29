@@ -2,6 +2,7 @@
 
 applications:
   - capi-core
+  - espejote
 
 parameters:
   kapitan:
@@ -9,6 +10,10 @@ parameters:
       - type: https
         source: https://raw.githubusercontent.com/projectsyn/component-capi-core/master/lib/capi-core.libsonnet
         output_path: vendor/lib/capi-core.libsonnet
+      - type: https
+        source: https://raw.githubusercontent.com/projectsyn/component-espejote/master/lib/espejote.libsonnet
+        output_path: vendor/lib/espejote.libsonnet
 
   capi_core:
+    clusterName: c-holy-fire-1337
     namespace: syn-cluster-api

@@ -51,6 +51,10 @@ parameters:
         args:
           - ${_base_directory}/manifests/capi-controlplane-provider-talos-rendered
           - \${compiled_target_dir}/capi-provider-talos/controlplane/10_kustomize
+      - input_paths:
+          - ${_base_directory}/component/ca-fact.jsonnet
+        input_type: jsonnet
+        output_path: ${_instance}/
 
       # Cleanup intermediate manifests
       - input_type: remove
