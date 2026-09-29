@@ -11,6 +11,16 @@ default:: `syn-cluster-api`
 The namespace in which to deploy this component.
 The component assumes that this namespace already exists via dependency `component-capi-core`.
 
+== `clusterName`
+
+[horizontal]
+type:: string
+default:: `${cluster:name}`
+
+The name of the cluster this component is installed on.
+If Espejote is installed, this component will automatically expose the cluster's CA certificate data as an additional fact in Steward.
+It uses Espejote to manage the additional fact, and uses the provided cluster name to identify the correct CA secret.
+
 == `images`
 
 [horizontal]
