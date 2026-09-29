@@ -4,6 +4,8 @@ parameters:
       multi_tenant: true
     namespace: syn-cluster-api
 
+    clusterName: ${cluster:name}
+
     images:
       capi-bootstrap-provider-talos:
         registry: ghcr.io
