@@ -29,7 +29,7 @@ spec:
         env:
         - name: GRPC_ENFORCE_ALPN_ENABLED
           value: "false"
-        image: ghcr.io/siderolabs/cluster-api-control-plane-talos-controller:v0.5.13
+        image: ghcr.io/siderolabs/cluster-api-control-plane-talos-controller:v0.5.14
         imagePullPolicy: Always
         livenessProbe:
           httpGet:

@@ -14,7 +14,7 @@ parameters:
       capi-controlplane-provider-talos:
         registry: ghcr.io
         image: siderolabs/cluster-api-control-plane-talos-controller
-        tag: v0.5.13
+        tag: v0.5.14
 
     kustomization_urls: {}
 
