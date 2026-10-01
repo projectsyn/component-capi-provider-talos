@@ -10,7 +10,7 @@ parameters:
       capi-bootstrap-provider-talos:
         registry: ghcr.io
         image: siderolabs/cluster-api-talos-controller
-        tag: v0.6.12
+        tag: v0.6.13
       capi-controlplane-provider-talos:
         registry: ghcr.io
         image: siderolabs/cluster-api-control-plane-talos-controller
